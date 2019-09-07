@@ -11,3 +11,13 @@ https://www.tutorialkart.com/opencv/python/opencv-python-resize-image/
 
 Get working directory
 https://stackoverflow.com/questions/30218802/get-parent-of-current-directory-from-python-script/30218825
+
+
+# in Tutorial 2 the images are too big, we need to resize them: 
+# Search on internet how to resize images in OpenCV
+# https://www.tutorialkart.com/opencv/python/opencv-python-resize-image/
+
+
+I incountered another problem which is: showing openCV image on jupyter notebook. to solve this:
+https://stackoverflow.com/questions/46236180/opencv-imshow-will-cause-jupyter-notebook-crash/52061135
+

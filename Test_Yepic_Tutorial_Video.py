@@ -7,6 +7,7 @@ Created on Sat Sep  7 13:58:14 2019
 
 import cv2
 import numpy as np
+from matplotlib import pyplot as plt
 import os.path
 import os
 # =============================================================================
@@ -68,8 +69,9 @@ matching_result = cv2.drawMatches(img1, kp1, img2, kp2, matches[:50], None, flag
 
 #cv2.imshow("Image_1",img1)
 #cv2.imshow("Image_2",img2)
-
-cv2.imshow("C:\Users\YESSINE AB\Yepic Project\img\Matching_result", matching_result)                
+plt.imshow(matching_result)
+plt.show()
+cv2.imshow(wdir +"\img\Matching_result", matching_result)                
 
 cv2.waitKey(0)
 cv2.destroyAllWindows()
