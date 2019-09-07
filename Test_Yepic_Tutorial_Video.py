@@ -16,7 +16,7 @@ import os
 # parent_dir= os.path.abspath(os.path.join(script_path, os.pardir))
 # =============================================================================
 
-print "file is --->:" + os.path.dirname(os.getcwd())
+# print "file is --->:" + os.path.dirname(os.getcwd())
 #parent_dir=os.path.dirname(os.getcwd())
 wdir=os.getcwd()
 img1 = cv2.imread(wdir +"\img\src_02.png",cv2.IMREAD_GRAYSCALE)
@@ -69,9 +69,11 @@ matching_result = cv2.drawMatches(img1, kp1, img2, kp2, matches[:50], None, flag
 
 #cv2.imshow("Image_1",img1)
 #cv2.imshow("Image_2",img2)
+print "Matching_results"
 plt.figure(figsize=(15,15))
 plt.imshow(matching_result)
 plt.show()
+
 cv2.imshow(wdir +"\img\Matching_result", matching_result)                
 
 cv2.waitKey(0)
