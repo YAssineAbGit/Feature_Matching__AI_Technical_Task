@@ -1,5 +1,8 @@
 help links:
 
+How to run a python file on jupyter notebook:
+https://stackoverflow.com/questions/21034373/how-to-load-edit-run-save-text-files-py-into-an-ipython-notebook-cell
+
 remove repository on Github.com:
 https://www.youtube.com/watch?v=vH6udovJVew
 
