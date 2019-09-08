@@ -6,3 +6,8 @@ To run the program, execute the Yepic_Workflow_python.ipynb
 
 ## problem of markdown on Github
 to do that:
+
+## Task list
+- [x] Finish my changes
+- [ ] Push my commits to GitHub
+- [ ] Open a pull request
