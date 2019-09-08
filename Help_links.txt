@@ -1,6 +1,6 @@
 help links:
 
-How to run a python file on jupyter notebook:
+How to run or Load a python file on jupyter notebook:
 https://stackoverflow.com/questions/21034373/how-to-load-edit-run-save-text-files-py-into-an-ipython-notebook-cell
 
 remove repository on Github.com:
@@ -12,13 +12,22 @@ https://www.youtube.com/watch?v=9auEJgjVKWM&t=1s
 resize images on python
 https://www.tutorialkart.com/opencv/python/opencv-python-resize-image/
 
+Crush course on OpenCV
+https://www.youtube.com/watch?v=kdLM6AOd2vc&t=0s
+
 Get working directory
 https://stackoverflow.com/questions/30218802/get-parent-of-current-directory-from-python-script/30218825
 
+# this solves the issue of plt.show()/ plt.show() does not always work with Jupyte, check README for more detail.
+https://github.com/jupyter/notebook/issues/3523
 
 # in Tutorial 2 the images are too big, we need to resize them: 
 # Search on internet how to resize images in OpenCV
 # https://www.tutorialkart.com/opencv/python/opencv-python-resize-image/
+
+Embed youtube videos using Markdown
+http://sviridovserg.com/2017/05/22/embed-youtube-to-markdown/
+https://stackoverflow.com/questions/11804820/embed-a-youtube-video
 
 
 I incountered another problem which is: showing openCV image on jupyter notebook. to solve this:

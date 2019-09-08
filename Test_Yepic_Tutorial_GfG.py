@@ -7,11 +7,39 @@ Created on Sat Sep  7 13:52:36 2019
 
 import cv2 
 import numpy as np 
+from matplotlib import pyplot as plt
+import os.path
+import os
+
+# Open the image files. 
+wdir=os.getcwd()
+# =============================================================================
+# print(" The directory is --> " + wdir)
+# print(" The file is --> " + wdir +"\img\src_02.png")
+# print(" The file is --> " + wdir +"\img\\tar_02.png")
+# =============================================================================
+
+# =============================================================================
+# img2_color = cv2.imread(wdir +"\img\src_02.png",cv2.IMREAD_GRAYSCALE)
+# img1_color = cv2.imread(wdir +"\img\\tar_02.png",cv2.IMREAD_GRAYSCALE)
+# =============================================================================
   
 # Open the image files. 
 img1_color = cv2.imread("tar_02.png")  # Image to be aligned. 
 img2_color = cv2.imread("src_02.png")    # Reference image. 
 print("here")
+
+# Rescaling Images:
+scale_percent = 40 # percent of original size
+
+width = int(img1_color.shape[1] * scale_percent / 100)
+height = int(img1_color.shape[0] * scale_percent / 100)
+dim = (width, height)
+# resize image 1
+img1_color = cv2.resize(img1_color, dim, interpolation = cv2.INTER_AREA)
+
+# resize image 2
+img2_color = cv2.resize(img2_color, dim, interpolation = cv2.INTER_AREA)
   
 # Convert to grayscale. 
 img1 = cv2.cvtColor(img1_color, cv2.COLOR_BGR2GRAY) 
@@ -60,3 +88,12 @@ transformed_img = cv2.warpPerspective(img1_color,
   
 # Save the output. 
 cv2.imwrite('output.png', transformed_img) 
+cv2.imshow('output.png', transformed_img) 
+
+print "transformed_img: "
+plt.figure(figsize=(15,15))
+plt.imshow(transformed_img)
+plt.show()
+
+cv2.waitKey(3500) # Wait for 3.5s and destroy
+cv2.destroyAllWindows()
