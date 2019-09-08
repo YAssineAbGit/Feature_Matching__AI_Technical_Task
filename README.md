@@ -13,7 +13,7 @@ to do that:
 - [x] Friday: Familiarize myself with the project
 - [x] Saturday: 
    - [x] Learn How to use Jupyter Notebook in parallel with the documentation. 
-   - [x] Download OpenCV and programming the examples in the tutorials. 
+   - [x] Download OpenCV and program the examples in the tutorials. 
    - [x] Do some research on Tutorials
    - [x] Program both suggested tutorials 
 - [ ] Sunday: find similar projets.
