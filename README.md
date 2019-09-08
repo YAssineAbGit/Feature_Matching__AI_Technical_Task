@@ -7,7 +7,22 @@ To run the program, execute the Yepic_Workflow_python.ipynb
 ## problem of markdown on Github
 to do that:
 
-## Task list
-- [x] Finish my changes
-- [ ] Push my commits to GitHub
-- [ ] Open a pull request
+
+## Days I have to finish the project:
+ 
+- [x] Friday: Familiarize myself with the project
+- [x] Saturday: 
+   - [x] Learn How to use Jupyter Notebook in parallel with the documentation. 
+   - [x] Download OpenCV and programming the examples in the tutorials. 
+   - [x] Do some research on Tutorials
+   - [x] Program both suggested tutorials 
+- [ ] Sunday: find similar projets.
+   - [ ] Litterature Research
+- [ ] Monday : programming
+- [ ] Tuesday : programming
+- [ ] Wednesday: programming
+- [ ] Thursday: programming
+- [ ] Friday: programming
+- [ ] Saturday: programming (share it on github)
+- [ ] Sunday: Handing the project
+- [ ] Monday: Handing the project
