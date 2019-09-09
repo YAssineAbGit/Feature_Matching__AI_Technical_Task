@@ -61,7 +61,7 @@ bf = cv2.BFMatcher(cv2.NORM_HAMMING, crossCheck=True)
 
 matches = bf.match(des1,des2)
 
-#print(len(matches)) 177
+#print(len(matches)) #177
 
 # Sorting matches & drawing the results:
 matches = sorted(matches, key = lambda x:x.distance)
@@ -72,10 +72,6 @@ matching_result = cv2.drawMatches(img1, kp1, img2, kp2, matches[:], None, flags 
 #     print(m.distance)
 # 
 # =============================================================================
-
-# the images are too big, we need to resize them: 
-# Search on internet how to resize images in OpenCV
-# https://www.tutorialkart.com/opencv/python/opencv-python-resize-image/
 
 #cv2.imshow("Image_1",img1)
 #cv2.imshow("Image_2",img2)
