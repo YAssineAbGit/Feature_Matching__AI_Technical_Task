@@ -13,20 +13,9 @@ import os
 
 # Open the image files. 
 wdir=os.getcwd()
-# =============================================================================
-# print(" The directory is --> " + wdir)
-# print(" The file is --> " + wdir +"\img\src_02.png")
-print(" The file is --> " + wdir +"\img\\tar_02.png")
-# =============================================================================
 
 img2_color = cv2.imread(wdir +"\img\src_02.png")
 img1_color = cv2.imread(wdir +"\img\\tar_02.png")
-  
-# Open the image files. 
-# =============================================================================
-# img1_color = cv2.imread("tar_02.png")  # Image to be aligned. 
-# img2_color = cv2.imread("src_02.png")    # Reference image. 
-# =============================================================================
 
 # Rescaling Images:
 scale_percent = 40 # percent of original size
@@ -87,12 +76,23 @@ transformed_img = cv2.warpPerspective(img1_color,
   
 # Save the output. 
 #cv2.imwrite('output.png', transformed_img) 
-#cv2.imshow('output.png', transformed_img) 
-
-print "transformed_img: "
-plt.figure(figsize=(15,15))
+#cv2.imshow('output.png', transformed_img)
+ 
+print "Wrapped image / Transformed image: "
+f=plt.figure(figsize=(15,15))
+f.add_subplot(1,2,1)
+#resize img1_
+plt.imshow(img1_color)
+f.add_subplot(1,2,2)
 plt.imshow(transformed_img)
-plt.show()
+plt.show(block=True)
+
+# =============================================================================
+# print "transformed_img: "
+# plt.figure(figsize=(15,15))
+# plt.imshow(transformed_img)
+# plt.show()
+# =============================================================================
 
 # =============================================================================
 # cv2.waitKey(3500) # Wait for 3.5s and destroy
