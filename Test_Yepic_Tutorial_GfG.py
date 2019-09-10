@@ -87,7 +87,7 @@ transformed_img = cv2.warpPerspective(img1_color,
                     homography, (width, height)) 
   
 # Save the output. 
-cv2.imwrite('output.png', transformed_img) 
+#cv2.imwrite('output.png', transformed_img) 
 #cv2.imshow('output.png', transformed_img) 
 
 print "transformed_img: "
