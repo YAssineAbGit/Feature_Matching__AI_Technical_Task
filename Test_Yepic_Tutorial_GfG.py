@@ -16,18 +16,17 @@ wdir=os.getcwd()
 # =============================================================================
 # print(" The directory is --> " + wdir)
 # print(" The file is --> " + wdir +"\img\src_02.png")
-# print(" The file is --> " + wdir +"\img\\tar_02.png")
+print(" The file is --> " + wdir +"\img\\tar_02.png")
 # =============================================================================
 
-# =============================================================================
-# img2_color = cv2.imread(wdir +"\img\src_02.png",cv2.IMREAD_GRAYSCALE)
-# img1_color = cv2.imread(wdir +"\img\\tar_02.png",cv2.IMREAD_GRAYSCALE)
-# =============================================================================
+img2_color = cv2.imread(wdir +"\img\src_02.png")
+img1_color = cv2.imread(wdir +"\img\\tar_02.png")
   
 # Open the image files. 
-img1_color = cv2.imread("tar_02.png")  # Image to be aligned. 
-img2_color = cv2.imread("src_02.png")    # Reference image. 
-print("here")
+# =============================================================================
+# img1_color = cv2.imread("tar_02.png")  # Image to be aligned. 
+# img2_color = cv2.imread("src_02.png")    # Reference image. 
+# =============================================================================
 
 # Rescaling Images:
 scale_percent = 40 # percent of original size
