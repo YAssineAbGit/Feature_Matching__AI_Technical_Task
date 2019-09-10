@@ -74,7 +74,9 @@ plt.figure(figsize=(15,15))
 plt.imshow(matching_result)
 plt.show()
 
-cv2.imshow(wdir +"\img\Matching_result", matching_result)                
-
-cv2.waitKey(3500) # Wait for 3.5s and destroy
-cv2.destroyAllWindows()
+# =============================================================================
+# cv2.imshow(wdir +"\img\Matching_result", matching_result)                
+# 
+# cv2.waitKey(3500) # Wait for 3.5s and destroy
+# cv2.destroyAllWindows()
+# =============================================================================

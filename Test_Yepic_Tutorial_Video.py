@@ -45,28 +45,67 @@ img1 = cv2.resize(img1, dim, interpolation = cv2.INTER_AREA)
 img2 = cv2.resize(img2, dim, interpolation = cv2.INTER_AREA)
 
 
-# ORB Detector
-orb = cv2.ORB_create()
-kp1, des1 = orb.detectAndCompute(img1, None)
-kp2, des2 = orb.detectAndCompute(img2, None)
-
-# Printing descriptors
+# BRISK Detector WORKING
 # =============================================================================
-# for d in des1:
-#     print(d)
+# br = cv2.BRISK_create();
+# 
+# # find and draw the keypoints
+# kp1 = br.detect(img1,None)
+# kp2 = br.detect(img2,None)
+# 
+# # compute the descriptors with BRIEF
+# kp1, des1 = br.compute(img1, kp1)
+# kp2, des2 = br.compute(img2, kp2)
+# # kp2, des2 = orb.detectAndCompute(img2, None)
 # =============================================================================
 
-# Brute Force Matching:
-bf = cv2.BFMatcher(cv2.NORM_HAMMING, crossCheck=True)
+MIN_MATCH_COUNT = 10
 
-matches = bf.match(des1,des2)
+# Initiate SIFT detector
+sift = cv2.xfeatures2d.SIFT_create()
 
-#print(len(matches)) #177
+# find the keypoints and descriptors with SIFT
+kp1, des1 = sift.detectAndCompute(img1,None)
+kp2, des2 = sift.detectAndCompute(img2,None)
 
-# Sorting matches & drawing the results:
-matches = sorted(matches, key = lambda x:x.distance)
-matching_result = cv2.drawMatches(img1, kp1, img2, kp2, matches[:], None, flags = 2)
+FLANN_INDEX_KDTREE = 0
+index_params = dict(algorithm = FLANN_INDEX_KDTREE, trees = 5)
+search_params = dict(checks = 50)
 
+flann = cv2.FlannBasedMatcher(index_params, search_params)
+
+matches = flann.knnMatch(des1,des2,k=2)
+
+# store all the good matches as per Lowe's ratio test.
+good = []
+for m,n in matches:
+    if m.distance < 0.7*n.distance:
+        good.append(m)
+        
+if len(good)>MIN_MATCH_COUNT:
+    src_pts = np.float32([ kp1[m.queryIdx].pt for m in good ]).reshape(-1,1,2)
+    dst_pts = np.float32([ kp2[m.trainIdx].pt for m in good ]).reshape(-1,1,2)
+
+    M, mask = cv2.findHomography(src_pts, dst_pts, cv2.RANSAC,5.0)
+    matchesMask = mask.ravel().tolist()
+
+    h,w = img1.shape
+    pts = np.float32([ [0,0],[0,h-1],[w-1,h-1],[w-1,0] ]).reshape(-1,1,2)
+    dst = cv2.perspectiveTransform(pts,M)
+
+    img2 = cv2.polylines(img2,[np.int32(dst)],True,255,3, cv2.LINE_AA)
+
+else:
+    print "Not enough matches are found - %d/%d" % (len(good),MIN_MATCH_COUNT)
+    matchesMask = None
+    
+draw_params = dict(matchColor = None, # draw matches in green color
+                   singlePointColor = None,
+                   matchesMask = matchesMask, # draw only inliers
+                   flags = 2)
+
+
+matching_result = cv2.drawMatches(img1,kp1,img2,kp2,good,None,**draw_params)
 # =============================================================================
 # for m in matches:
 #     print(m.distance)
@@ -80,7 +119,9 @@ plt.figure(figsize=(15,15))
 plt.imshow(matching_result)
 plt.show()
 
-cv2.imshow(wdir +"\img\Matching_result", matching_result)                
-
-cv2.waitKey(3500) # Wait for 3.5s and destroy
-cv2.destroyAllWindows()
+# =============================================================================
+# cv2.imshow(wdir +"\img\Matching_result", matching_result)                
+# 
+# cv2.waitKey(3500) # Wait for 3.5s and destroy
+# cv2.destroyAllWindows()
+# =============================================================================

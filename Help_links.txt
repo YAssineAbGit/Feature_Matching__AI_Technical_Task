@@ -35,3 +35,6 @@ https://stackoverflow.com/questions/46236180/opencv-imshow-will-cause-jupyter-no
 
 Set OPENCV_ENABLE_NONFREE CMake option and rebuild the library in function 'cv::xfeatures2d::SIFT::create'
 https://stackoverflow.com/questions/52305578/sift-cv2-xfeatures2d-sift-create-not-working-even-though-have-contrib-instal
+
+Feature detection (SIFT, SURF, ORB) – OpenCV 3.4 with python 3 Tutorial 25
+https://www.youtube.com/watch?v=USl5BHFq2H4&t=522s

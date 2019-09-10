@@ -88,12 +88,15 @@ transformed_img = cv2.warpPerspective(img1_color,
   
 # Save the output. 
 cv2.imwrite('output.png', transformed_img) 
-cv2.imshow('output.png', transformed_img) 
+#cv2.imshow('output.png', transformed_img) 
 
 print "transformed_img: "
 plt.figure(figsize=(15,15))
 plt.imshow(transformed_img)
 plt.show()
 
-cv2.waitKey(3500) # Wait for 3.5s and destroy
-cv2.destroyAllWindows()
+# =============================================================================
+# cv2.waitKey(3500) # Wait for 3.5s and destroy
+# cv2.destroyAllWindows()
+# 
+# =============================================================================
