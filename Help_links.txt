@@ -38,8 +38,11 @@ https://stackoverflow.com/questions/52305578/sift-cv2-xfeatures2d-sift-create-no
 
 Feature detection (SIFT, SURF, ORB) – OpenCV 3.4 with python 3 Tutorial 25
 https://www.youtube.com/watch?v=USl5BHFq2H4&t=522s
-
+https://docs.opencv.org/trunk/dc/dc3/tutorial_py_matcher.html
+https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_feature2d/py_matcher/py_matcher.html
 
 Remove outliers
 https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_feature2d/py_feature_homography/py_feature_homography.html
 
+RanSac Algorithm to remove outliers
+https://answers.opencv.org/question/53035/how-to-implement-ransac-algorithm-using-opencv-to-remove-outliers/
