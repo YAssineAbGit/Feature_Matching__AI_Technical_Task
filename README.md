@@ -1,4 +1,4 @@
-# Yepic_AI_Technical_Task
+# AI_Technical_Task
 
 ## How to run the code:
 To run the code, execute the Yepic_Workflow_python.ipynb by double-clicking it.
