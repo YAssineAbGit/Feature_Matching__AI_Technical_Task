@@ -3,7 +3,7 @@
 ## How to run the code:
 To run the code, execute the Yepic_Workflow_python.ipynb by double-clicking it.
 
-## Yepic_AI_Technical_Task
+## AI_Technical_Task
 The task is to figure out mapping from one item of clothing to another item of clothing and generate a mapping that matches points from one image to another image in a slightly different (warped) position.
 
 ## Criteria:
